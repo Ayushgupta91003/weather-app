@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-
-
 class HourlyForecaseItem extends StatelessWidget {
-  const HourlyForecaseItem({super.key});
+  final String time;
+  final IconData icon;
+  final String temperature;
+  const HourlyForecaseItem({super.key, required this.time, required this.icon, required this.temperature});
 
   @override
   Widget build(BuildContext context) {
@@ -15,20 +16,20 @@ class HourlyForecaseItem extends StatelessWidget {
       child: Container(
         width: 100,
         padding: const EdgeInsets.all(8.0),
-        child: const Column(
+        child: Column(
           children: [
             Text(
-              "03:00",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              time,
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
-            Icon(Icons.cloud, size: 32),
-            SizedBox(
+            Icon(icon, size: 32),
+            const SizedBox(
               height: 5,
             ),
-            Text("320.12"),
+            Text(temperature),
           ],
         ),
       ),
